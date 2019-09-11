@@ -1,0 +1,152 @@
+class Animals:
+  all_weights = 0
+  weight = 0
+  name = ()
+  need_eat = 'i_need'
+  voice = ' '
+  def weight_of(self, value):
+      self.weight += value
+  
+  
+  def name_of_animal(self, value):
+     self.name = value
+     
+  def feed(self):
+    self.need_eat = 'i_fed up'
+  
+  def voice_of_ani(self, value):
+    self.voice = value
+
+  def who_is(self, voice):
+    if voice == 'mu_mu':
+      print('thi is cowe')
+    elif voice == 'be_be':
+      print('this is sheep')
+    elif voice == 'me_me':
+      print('this is goal')
+
+
+  # def all_weight(self,weight):
+  #   numbers = []
+    
+  #   all_weights = 
+        
+          
+
+class Ungulates(Animals):
+  milk = 'none'
+  haircut = 'уже пора'
+  
+  def milking(self):
+    self.milk = 'milking_now'
+  
+  def haircuting(self):
+    self.haircut = 'спасибо за стрижку'
+    
+class Birds(Animals):
+  eggs = 0
+  
+  
+  def eggs_collect(self, value):
+    self.eggs += value
+    
+    
+class Cowe(Ungulates,Animals):
+  voice = 'mu_mu'
+
+  # def who_is(self, voice):
+  #   if voice == 'mu_mu':
+  #     print('thi is cowe')
+  pass
+
+class Sheep(Animals):
+  voice = 'be_be'
+  pass
+
+class Goat(Ungulates,Animals):
+  voice = 'me_me'
+  pass
+
+class Goos(Birds,Animals):
+  weight = 0
+  
+  pass
+
+class Chiken(Birds, Animals):
+  voice = 'kokoko'
+  weight = 0  
+  pass
+
+class Duck(Birds, Animals):
+  voice = 'kray_kray'
+  weight = 0  
+  pass
+
+cowe = Cowe()
+cowe.name_of_animal('mura')
+cowe.weight_of(120)
+
+goat_1 = Goat()
+goat_2 = Goat()
+goat_1.name_of_animal('рога')
+goat_1.weight_of(45)
+goat_2.name_of_animal('копыта')
+goat_2.weight_of(36)
+
+sheep_1 = Sheep()
+sheep_2 = Sheep()
+sheep_1.name_of_animal('бараш')
+sheep_1.weight_of(23)
+sheep_2.name_of_animal('кудряш')
+sheep_2.weight_of(27)
+
+goos_1 = Goos()
+goos_2 = Goos()
+goos_1.name_of_animal('белый')
+goos_2.name_of_animal('серый')
+goos_1.weight_of(12)
+goos_2.weight_of(8)
+
+chik_1 = Chiken()
+chik_2 = Chiken()
+chik_1.name_of_animal('ко-ко')
+chik_2.name_of_animal('кукарача')
+chik_1.weight_of(4)
+chik_2.weight_of(3)
+
+duck_1 = Duck()
+duck_1.name_of_animal('кряква')
+duck_1.weight_of(7)
+
+# d = [cowe.weight, goos_1.weight, goos_2.weight, chik_1.weight, chik_2.weight, duck_1.weight, goat_1.weight, goat_2.weight, sheep_1.weight, sheep_2.weight, goat_1.weight, goat_2.weight]
+
+# d.sort() 
+# print(d[-1])
+# who = d[-1]
+# for i in d:
+#   if i == who:
+   
+dic = [
+   {'name' : cowe, 'weight' : cowe.weight}, {'name' : sheep_1, 'weight' : sheep_1.weight}, {'name' : sheep_2, 'weight' : sheep_2.weight}, {'name' : goat_1, 'weight' : goat_1.weight}, {'name' : goat_2, 'weight' : goat_2.weight}, {'name' : goos_1, 'weight' : goos_1.weight}, {'name' : goos_2, 'weight' : goos_2.weight}, {'name' : chik_1, 'weight' : chik_1.weight}, {'name' : chik_2, 'weight' : chik_2.weight}, {'name' : duck_1, 'weight' : duck_1.weight}]
+  
+def sum_of_weight(dics):  
+  sum_of_weight_animal = 0
+  for pet in dics:
+    sum_of_weight_animal += pet['weight']
+  print(sum_of_weight_animal)
+  
+ma = sum_of_weight(dic)
+print(ma)
+
+def bigest(dics):
+  for numbre in dics:
+    big = 0
+    name = ''
+    if numbre['weight'] > big:
+      big = numbre['weight']
+      name = numbre['name']
+      # print(type(numbre))
+    return big, name
+
+mu = bigest(dic)
+print(mu)
